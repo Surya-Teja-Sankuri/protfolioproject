@@ -1,0 +1,87 @@
+/* Navbar.css */
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background: rgba(255, 255, 255, 0.2);
+  backdrop-filter: blur(10px);
+  position: sticky;
+  top: 0;
+  padding: 20px 35px;
+  z-index: 1000;
+  transition: all 0.3s;
+}
+
+.navbar.open {
+  background: rgba(75, 74, 74, 0.8);
+  backdrop-filter: blur(10px);
+}
+
+.logo {
+  font-size: 2rem;
+  color: #fff;
+}
+
+.nav-links {
+  list-style: none;
+  display: flex;
+  gap: 20px;
+}
+
+.nav-links li {
+  padding: 0;
+}
+
+.nav-links a {
+  text-decoration: none;
+  color: #fff;
+  font-size: larger;
+}
+
+.menu-toggle {
+  display: none;
+  flex-direction: column;
+  cursor: pointer;
+}
+
+.bar {
+  width: 30px;
+  height: 3px;
+  background: #ffffff;
+  margin: 3px 0;
+  transition: all 0.3s;
+}
+
+.navbar.open .menu-toggle .bar:nth-child(1) {
+  transform: rotate(-45deg) translate(-5px, 6px);
+}
+
+.navbar.open .menu-toggle .bar:nth-child(2) {
+  opacity: 0;
+}
+
+.navbar.open .menu-toggle .bar:nth-child(3) {
+  transform: rotate(45deg) translate(-5px, -6px);
+}
+
+@media (max-width: 768px) {
+  .menu-toggle {
+    display: flex;
+  }
+  .nav-links {
+    display: none;
+  }
+
+  .nav-links.open {
+    display: flex;
+    flex-direction: column;
+    position: absolute;
+    top: 50px;
+    left: 0;
+    background: rgba(39, 38, 38, 0.9);
+    width: 100%;
+    padding-block: 10px;
+  }
+}
+
+/* Add more responsive styles as needed */
